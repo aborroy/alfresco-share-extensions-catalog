@@ -1,0 +1,42 @@
+<extension>
+  <modules>
+    <module>
+      <id>share-extension</id>
+      <version>1.0</version>
+      <auto-deploy>true</auto-deploy>
+      <components>
+        <!-- Remove content from Share (hide My Sites) -->
+        <component>
+          <region-id>component-1-1</region-id>
+          <source-id>user/{userid}/dashboard</source-id>
+          <scope>page</scope>
+          <sub-components>
+            <sub-component id="default">
+              <evaluations>
+                <evaluation id="guaranteedToHide">
+                  <render>false</render>
+                </evaluation>
+              </evaluations>
+            </sub-component>
+          </sub-components>
+        </component>
+      </components>
+      <customizations>
+        <!-- Customize Footer -->
+        <customization>
+          <targetPackageRoot>org.alfresco.components.footer</targetPackageRoot>
+          <sourcePackageRoot>org.alfresco.customization.footer.template</sourcePackageRoot>
+        </customization>
+      </customizations>
+      <configurations>
+          <!-- Include additional JS resources -->
+          <config evaluator="string-compare" condition="DocLibCustom">
+            <dependencies>
+              <js src="components/documentlibrary/custom-doclib-actions.js" />
+              <js src="components/documentlibrary/custom-metadata-template-renderer.js"/>
+            </dependencies>
+          </config>
+      </configurations>
+    </module>
+  </modules>
+</extension>

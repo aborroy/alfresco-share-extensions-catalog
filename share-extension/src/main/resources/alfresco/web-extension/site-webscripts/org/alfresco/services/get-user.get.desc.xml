@@ -1,0 +1,7 @@
+<webscript>
+    <shortname>Get User</shortname>
+    <description>Get User details from REST API v1</description>
+    <family>alfresco</family>
+    <format default="json">extension</format>
+    <url>/user?userId={userId}</url>
+</webscript>
