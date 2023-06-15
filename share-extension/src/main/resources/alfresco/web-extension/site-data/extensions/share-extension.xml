@@ -22,10 +22,18 @@
         </component>
       </components>
       <customizations>
-        <!-- Customize Footer -->
+        <!-- Customize Footer (FTL) -->
         <customization>
           <targetPackageRoot>org.alfresco.components.footer</targetPackageRoot>
           <sourcePackageRoot>org.alfresco.customization.footer.template</sourcePackageRoot>
+        </customization>
+        <!-- Customize Live Search (Aikau) -->
+        <customization>
+          <targetPackageRoot>org.alfresco</targetPackageRoot>
+          <sourcePackageRoot>org.alfresco.customization.live.search</sourcePackageRoot>
+          <alwaysApply>
+            <webscript>share-header</webscript>
+          </alwaysApply>
         </customization>
       </customizations>
       <configurations>

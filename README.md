@@ -218,15 +218,28 @@ The following table compares share-config-custom.xml with Surf Extension modules
 * Override Spring Surf Web Scripts
 
 ```xml
+<!-- Customize Footer (FTL) -->
 <customization>
   <targetPackageRoot>org.alfresco.components.footer</targetPackageRoot>
   <sourcePackageRoot>org.alfresco.customization.footer.template</sourcePackageRoot>
 </customization>
+<!-- Customize Live Search (Aikau) -->
+<customization>
+  <targetPackageRoot>org.alfresco</targetPackageRoot>
+  <sourcePackageRoot>org.alfresco.customization.live.search</sourcePackageRoot>
+  <alwaysApply>
+    <webscript>share-header</webscript>
+  </alwaysApply>
+</customization>
 ```
 
-Above sample applies the changes described in [footer.get.html.ftl](share-extension/src/main/resources/alfresco/web-extension/site-webscripts/org/alfresco/customization/footer/template/footer.get.html.ftl) to Share footer.
+Above sample (FTL) applies the changes described in [footer.get.html.ftl](share-extension/src/main/resources/alfresco/web-extension/site-webscripts/org/alfresco/customization/footer/template/footer.get.html.ftl) to Share footer.
 
 ![footer](images/footer.png)
+
+Additionally, the Aikau extension modifies a widget property to avoid showing `person` results in Live Search box as described in [share-header.get.js](share-extension/src/main/resources/alfresco/web-extension/site-webscripts/org/alfresco/customization/live/search/share-header.get.js)
+
+![live-search](images/live-search.png)
 
 * Load Web Resources (CSS, JS)
 
