@@ -192,8 +192,6 @@ Additional configuration options:
 
 The configurations typically goes into a `*-extension.xml` file under `web-extension/site-data/extensions` folder, like [share-extension.xml](share-extension/src/main/resources/alfresco/web-extension/site-data/extensions/share-extension.xml)
 
-The following table compares share-config-custom.xml with Surf Extension modules:
-
 * Add, Update, and Hide components on a Surf Page. This sample hides user dashborad:
 
 ```xml
